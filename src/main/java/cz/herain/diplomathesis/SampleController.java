@@ -20,7 +20,7 @@ import java.io.PrintWriter;
 
 @Controller
 @RequestMapping("VIEW")
-public class PortletViewController {
+public class SampleController {
 
 	@Autowired
 	private FooService fooService;
@@ -38,8 +38,11 @@ public class PortletViewController {
 	}
 
 	@ActionMapping(value = "submitFoo")
-	public void submitFoo(@ModelAttribute(value = "foo") Foo foo, BindingResult result,
-							  ActionRequest actionRequest, ActionResponse actionResponse) {
+	public void submitFoo(
+			@ModelAttribute(value = "foo") Foo foo,
+			BindingResult result,
+			ActionRequest actionRequest,
+			ActionResponse actionResponse) {
 
 		actionResponse.setRenderParameter("render", "moreSpecificView");
 	}
@@ -52,7 +55,10 @@ public class PortletViewController {
 	}
 
 	@EventMapping(value ="{http://liferay.com/events}foo.bar.event")
-	public void receiveFooBarEvent(EventRequest request, EventResponse response, Model model) {
+	public void receiveFooBarEvent(
+			EventRequest request,
+			EventResponse response,
+			Model model) {
 		Event event = request.getEvent();
 		String pitch = (String)event.getValue();
 
