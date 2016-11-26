@@ -28,7 +28,7 @@ public class SampleController {
 	@RenderMapping
 	public String primaryView(Model model) {
 		model.addAttribute("releaseInfo", ReleaseInfo.getReleaseInfo());
-		return "view";
+		return "formular";
 	}
 
 	@RenderMapping(params = "render=moreSpecificView")

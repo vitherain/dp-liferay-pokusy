@@ -16,4 +16,9 @@
 		<property name="suffix" value=".jsp" />
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 	</bean>
+
+	<bean id="portletMultipartResolver"
+		  class="org.springframework.web.portlet.multipart.CommonsPortletMultipartResolver">
+		<property name="maxUploadSize" value="100000"/>
+	</bean>
 </beans>
